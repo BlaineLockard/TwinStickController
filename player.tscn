@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckjid4q7tg6ld"]
+
+[ext_resource type="Script" uid="uid://c10optu01vayx" path="res://characterController.gd" id="1_4flbx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_onrkg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4flbx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 34.0147
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4flbx")
+
+[node name="ShootingTracker" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ShootingTracker"]
+position = Vector2(2.3841858e-07, -5.9604645e-08)
+scale = Vector2(65.125, 65.125)
+texture = SubResource("CanvasTexture_onrkg")
+
+[node name="forward" type="Line2D" parent="ShootingTracker"]
+position = Vector2(8, 30)
+scale = Vector2(1.075, 0.7500002)
+points = PackedVector2Array(3, -40, 13, -40, 23, -40)
+default_color = Color(0, 0, 0, 1)
+
+[node name="MouseTracker" type="Sprite2D" parent="ShootingTracker"]
+visible = false
+top_level = true
+scale = Vector2(18.499998, 18.500002)
+texture = SubResource("CanvasTexture_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i3pqv")

@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://i78jogc4vlue"]
+
+[ext_resource type="PackedScene" uid="uid://ckjid4q7tg6ld" path="res://player.tscn" id="1_glv2v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rxg2q"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_glv2v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uu6xs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0du0"]
+
+[node name="root" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(0.16002652, 0.37561217, 0.10890309, 1)
+position = Vector2(583, 321.00003)
+scale = Vector2(800, 600)
+texture = SubResource("CanvasTexture_rxg2q")
+
+[node name="Player" parent="." instance=ExtResource("1_glv2v")]
+position = Vector2(587, 317)
+motion_mode = 1
+
+[node name="wall" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(177, 322)
+scale = Vector2(12.5, 626)
+texture = SubResource("CanvasTexture_glv2v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall"]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_uu6xs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/StaticBody2D"]
+scale = Vector2(0.05, 0.05)
+shape = SubResource("RectangleShape2D_r0du0")
+
+[node name="wall2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(989.0001, 322)
+scale = Vector2(12.5, 626)
+texture = SubResource("CanvasTexture_glv2v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall2"]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_uu6xs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2/StaticBody2D"]
+scale = Vector2(0.05, 0.05)
+shape = SubResource("RectangleShape2D_r0du0")
+
+[node name="wall3" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(584, 16)
+rotation = 1.5707964
+scale = Vector2(12.5, 824.7569)
+texture = SubResource("CanvasTexture_glv2v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall3"]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_uu6xs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3/StaticBody2D"]
+scale = Vector2(0.05, 0.05)
+shape = SubResource("RectangleShape2D_r0du0")
+
+[node name="wall4" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(584.00006, 626.99994)
+rotation = 1.5707964
+scale = Vector2(12.499999, 824.75696)
+texture = SubResource("CanvasTexture_glv2v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall4"]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_uu6xs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4/StaticBody2D"]
+scale = Vector2(0.05, 0.05)
+shape = SubResource("RectangleShape2D_r0du0")
